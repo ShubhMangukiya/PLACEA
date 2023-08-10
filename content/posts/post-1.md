@@ -1,11 +1,11 @@
 ---
-title: "How to make toys from old Olarpaper"
+title: "Leh ladakh road trip"
 description: "meta description"
 date: 2023-04-04
 image: "/images/posts/01.jpg"
-categories: ["art"]
-authors: ["Mark Dinn"]
-tags: ["diy", "toy"]
+categories: ["Road Trip"]
+authors: ["PLACEA"]
+tags: ["travel", "bike"]
 draft: false
 ---
 
