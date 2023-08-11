@@ -1,5 +1,5 @@
 ---
-title: "INCREDIBLE RANN OF KUTCH"
+title: "Goa Most Popular Place In India"
 description: "meta description"
 date: 2023-04-04
 image: "/images/posts/goa.jpg"
