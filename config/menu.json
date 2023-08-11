@@ -4,58 +4,56 @@
       "name": "Home",
       "url": "/"
     },
+
     {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
-      "name": "Pages",
+      "name": "Categories",
       "url": "",
       "hasChildren": true,
       "children": [
+
         {
-          "name": "Authors",
-          "url": "/authors"
+          "name": "Explore City",
+          "url": "/categories/explore-city"
         },
         {
-          "name": "Categories",
-          "url": "/categories"
+          "name": "Heritage",
+          "url": "/categories/heritage"
         },
         {
-          "name": "Tags",
-          "url": "/tags"
+          "name": "Beach",
+          "url": "/categories/beach"
         },
         {
-          "name": "Elements",
-          "url": "/elements"
-        },
-        {
-          "name": "Privacy Policy",
-          "url": "/privacy-policy"
+          "name": "Adventure",
+          "url": "/categories/adventure"
         }
       ]
+    },
+    {
+      "name": "About Us",
+      "url": "/about-us"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact-us"
     }
   ],
   "footer": [
     {
-      "name": "About",
-      "url": "/about"
+      "name": "About Us",
+      "url": "/about-us"
     },
     {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Contact Us",
+      "url": "/contact-us"
     },
     {
       "name": "Privacy Policy",
       "url": "/privacy-policy"
+    },
+    {
+      "name": "Terms & Condition",
+      "url": "/terms-and-condition"
     }
   ]
 }

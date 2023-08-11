@@ -3,7 +3,7 @@ title: "Udaipur - A Heart of Heritage"
 description: "meta description"
 date: 2023-04-04
 image: "/images/posts/udaipur.jpeg"
-categories: ["Explore City"]
+categories: ["Explore City", "Heritage"]
 authors: ["PLACEA"]
 tags: ["travel", "city", "rajasthan"]
 draft: false
