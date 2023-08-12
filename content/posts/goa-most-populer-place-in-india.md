@@ -1,6 +1,6 @@
 ---
 title: "Goa Most Popular Place In India"
-description: "meta description"
+description: "Nestled along the pristine Arabian Sea on the western coast of India, Goa stands as a testament to the perfect blend of natural beauty, vibrant culture, and rich history. Often referred to as the "Pearl of the Orient," Goa has emerged as one of India's most popular tourist destinations, attracting travelers from across the globe. With its stunning beaches, vibrant nightlife, colonial heritage, and serene landscapes, this coastal paradise offers a captivating experience that lingers in the hearts of all who visit."
 date: 2023-04-04
 image: "/images/posts/goa.jpg"
 categories: ["Beach", "Explore City"]

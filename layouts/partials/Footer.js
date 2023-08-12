@@ -23,7 +23,7 @@ const Footer = () => {
         {/* social icons */}
         <Social source={social} className="social-icons mb-8" />
         {/* copyright */}
-        {"©PLACEA All Rights Reserved"}
+        {markdownify(copyright, "p", "text-light")}
       </div>
     </footer>
   );
