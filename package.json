@@ -15,7 +15,7 @@
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "marked": "^4.2.4",
-    "next": "^13.0.7",
+    "next": "^13.4.13",
     "next-mdx-remote": "^3.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
