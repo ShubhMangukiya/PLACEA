@@ -1,11 +1,12 @@
 ---
 title: PLACEA
-image: /images/authors/john-doe.jpg
-description: this is meta description
+image: /images/authors/author.png
+description: Explore captivating destinations, travel tips, and cultural experiences on our vibrant travel blog.
 social:
-  facebook: https://www.facebook.com/
+  facebook: https://www.facebook.com/placea.in
   twitter: https://www.twitter.com/
-  instagram: https://www.instagram.com/
+  instagram: https://www.instagram.com/placea.in
+  youtube: https://www.youtube.com/@placea01
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+"Explore captivating destinations, travel tips, and cultural experiences on our vibrant travel blog. Embark on unforgettable journeys and discover the world's wonders through our insightful articles."

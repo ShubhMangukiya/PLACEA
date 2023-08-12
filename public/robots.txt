@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
-
-Disallow: /api/*
+Disallow:
+Allow:
+Sitemap: https://www.placea.com/sitemap.xml
