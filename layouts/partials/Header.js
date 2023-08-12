@@ -116,10 +116,7 @@ const Header = () => {
             setSearchModal={setSearchModal}
           />
         </nav>
-        <meta name="twitter:image" content="<generated>" />
-        <meta name="twitter:image:type" content="<generated>" />
-        <meta name="twitter:image:width" content="<generated>" />
-        <meta name="twitter:image:height" content="<generated>" />
+        
       </header>
     </>
   );
