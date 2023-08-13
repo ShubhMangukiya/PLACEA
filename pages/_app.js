@@ -1,5 +1,3 @@
-
-import Script from 'next/script';
 import config from "@config/config.json";
 import theme from "@config/theme.json";
 import { JsonContext } from "context/state";
@@ -8,30 +6,6 @@ import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import "styles/style.scss";
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <>
-    <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"/>
-    <Script
-      id='google-analytics'
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-RWW57SD920', {
-            page_path: window.location.pathname,
-          });
-        `,
-        }}
-    />
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-    </>
-  )
-}
 const App = ({ Component, pageProps }) => {
   // import google font css
   const pf = theme.fonts.font_family.primary;
