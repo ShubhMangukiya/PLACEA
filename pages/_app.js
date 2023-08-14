@@ -26,7 +26,7 @@ const App = ({ Component, pageProps }) => {
   };
   useEffect(() => {
     setTimeout(() => {
-      config.params.tag_manager_id && TagManager.initialize(tagManagerArgs);
+      G-RWW57SD920 && TagManager.initialize(tagManagerArgs);
     }, 5000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
