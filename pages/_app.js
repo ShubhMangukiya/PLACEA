@@ -4,6 +4,7 @@ import { JsonContext } from "context/state";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
+import { initGA, logPageView } from '../lib/googleanalytics.js';
 import "styles/style.scss";
 
 const App = ({ Component, pageProps }) => {
@@ -28,6 +29,18 @@ const App = ({ Component, pageProps }) => {
       config.params.tag_manager_id && TagManager.initialize(tagManagerArgs);
     }, 5000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Google Analytics integration
+  useEffect(() => {
+    if (config.params.google_analytics_id) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", config.params.google_analytics_id);
+    }
   }, []);
 
   return (
