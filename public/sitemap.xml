@@ -1,32 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://placea.in/Goa-Most-Popular-Place-In-India</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <lastmod>2023-08-11</lastmod>
+        <loc>https://placea.in/</loc>
     </url>
     <url>
-        <loc>https://placea.in/Heaven-Of-India---Kashmir</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <lastmod>2023-08-11</lastmod>
+        <loc>https://placea.in/sitemap-posts.xml</loc>
     </url>
     <url>
-        <loc>https://placea.in/Incredible-Rann-of-Kutch</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <lastmod>2023-08-11</lastmod>
-    </url>
-    <url>
-        <loc>https://placea.in/Tourist-Attraction-Place-in-india---Ladakh</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <lastmod>2023-08-11</lastmod>
-    </url>
-    <url>
-        <loc>https://placea.in/Udaipur---A-Heart-of-Heritage</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <lastmod>2023-08-11</lastmod>
+        <loc>https://placea.in/sitemap-images.xml</loc>
     </url>
 </urlset>

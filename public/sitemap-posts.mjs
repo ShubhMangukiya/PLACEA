@@ -18,8 +18,8 @@ const fetchBlogsList = async () => {
 
         if (blogPosts) {
             blogPosts.forEach(post => {
-                const modifiedURL = post.frontmatter.title.replace(/ /g, '-');
-                untrackedUrlsList.push(`${hostBlogBaseURL}/${modifiedURL}`);
+                const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
+                untrackedUrlsList.push(`${hostBlogBaseURL}/${modifiedTitle}`);
             });
             filterUniqueURLs();
         }
@@ -31,7 +31,7 @@ const fetchBlogsList = async () => {
     Method to Filter/Unique already existing URLs and new urls we fetched from DB
 */
 const filterUniqueURLs = () => {
-    fs.readFile('sitemap.xml', (err, data) => {
+    fs.readFile('sitemap-posts.xml', (err, data) => {
         if (data) {
             const existingSitemapList = JSON.parse(convert.xml2json(data, options));
             let existingSitemapURLStringList = [];
@@ -46,13 +46,13 @@ const filterUniqueURLs = () => {
                             _text: ele,
                         },
                         changefreq: {
-                            _text: 'monthly'
+                            _text: 'weekly'
                         },
                         priority: {
                             _text: 0.8
                         },
                         lastmod: {
-                            _text: moment(new Date()).format('YYYY-MM-DD')
+                            _text: moment().format('YYYY-MM-DDTHH:mm:ssZ')
                         }
                     });
                 }
@@ -74,12 +74,12 @@ const createSitemapFile = (list) => {
     Method to Update sitemap.xml file content
 */
 const saveNewSitemap = (xmltext) => {
-    fs.writeFile('sitemap.xml', xmltext, (err) => {
+    fs.writeFile('sitemap-posts.xml', xmltext, (err) => {
         if (err) {
             return console.log(err);
         }
 
-        console.log("sitemap updated !");
+        console.log("Post updated in sitemap!");
     });
 }
 
