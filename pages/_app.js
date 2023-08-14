@@ -4,7 +4,6 @@ import { JsonContext } from "context/state";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
-import { initGA, logPageView } from '../lib/googleanalytics.js';
 import "styles/style.scss";
 
 const App = ({ Component, pageProps }) => {
@@ -31,15 +30,17 @@ const App = ({ Component, pageProps }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Google Analytics integration
   useEffect(() => {
-    if (G-RWW57SD920) {
+    // Google Analytics (gtag.js) setup
+    const measurementId = 'G-RWW57SD920'; // Replace with your Measurement ID
+
+    if (measurementId) {
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         window.dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", G-RWW57SD920);
+      gtag('js', new Date());
+      gtag('config', measurementId);
     }
   }, []);
 

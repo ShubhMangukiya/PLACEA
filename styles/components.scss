@@ -79,3 +79,9 @@
 .content {
   @apply prose-blockquote:bg-theme-light prose max-w-none prose-headings:font-bold prose-h1:mb-4 prose-h1:text-h1-sm prose-h2:mb-4 prose-h2:mt-4 prose-h2:text-h2-sm prose-h3:mt-4 prose-h3:text-h3-sm prose-h4:mt-4 prose-h5:mb-4 prose-h6:mb-6 prose-blockquote:border-primary prose-blockquote:p-4 md:prose-h1:text-h1 md:prose-h2:text-h2 md:prose-h3:text-h3;
 }
+
+.image {
+  width: auto;
+  // Add height and set it to "auto"
+  height: auto;
+}
