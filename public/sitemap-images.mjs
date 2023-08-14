@@ -27,8 +27,8 @@ const fetchBlogsList = async () => {
             };
 
             blogPosts.forEach(post => {
-                const modifiedURL = post.frontmatter.title.replace(/ /g, '-').toLowerCase();
-                const postUrl = `${hostBlogBaseURL}/${modifiedURL}`;
+                const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
+                const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
                 const encodedImageUrl = encodeURIComponent(post.frontmatter.image);
                 
                 const imageUrl = `${hostImageURL}${encodedImageUrl}`;
