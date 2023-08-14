@@ -26,20 +26,20 @@ const App = ({ Component, pageProps }) => {
   };
   useEffect(() => {
     setTimeout(() => {
-      G-RWW57SD920 && TagManager.initialize(tagManagerArgs);
+      config.params.tag_manager_id && TagManager.initialize(tagManagerArgs);
     }, 5000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Google Analytics integration
   useEffect(() => {
-    if (config.params.google_analytics_id) {
+    if (G-RWW57SD920) {
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         window.dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", config.params.google_analytics_id);
+      gtag("config", G-RWW57SD920);
     }
   }, []);
 
