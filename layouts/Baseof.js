@@ -79,7 +79,7 @@ const Base = ({
         {/* og-image */}
         <meta
           property="og:image"
-          content={`${base_url}/_next/image?url=${image ? image : meta_image}`}
+          content={`${base_url}/_next/image?url=${image ? image : meta_image}&w=2048&q=75`}
         />
 
         {/* twitter-image */}
