@@ -32,7 +32,6 @@ const fetchBlogsList = async () => {
                 const encodedImageUrl = encodeURIComponent(post.frontmatter.image);
                 
                 const imageUrl = `${hostImageURL}${encodedImageUrl}`;
-                const imageCaption = post.frontmatter.caption;
                 const imageWidth = 1080; // Replace with actual image width
                 const imageHeight = 75; // Replace with actual image height
 
