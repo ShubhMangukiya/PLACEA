@@ -1,4 +1,5 @@
 import config from "@config/config.json";
+import { Analytics } from '@vercel/analytics/react';
 import theme from "@config/theme.json";
 import { JsonContext } from "context/state";
 import Head from "next/head";
@@ -65,6 +66,7 @@ const App = ({ Component, pageProps }) => {
         />
       </Head>
       <Component {...pageProps} />
+      <Analytics />
     </JsonContext>
   );
 };

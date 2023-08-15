@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "marked": "^4.2.4",
