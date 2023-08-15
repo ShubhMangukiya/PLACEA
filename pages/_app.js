@@ -31,20 +31,6 @@ const App = ({ Component, pageProps }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    // Google Analytics (gtag.js) setup
-    const measurementId = 'G-RWW57SD920'; // Replace with your Measurement ID
-
-    if (measurementId) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', measurementId);
-    }
-  }, []);
-
   return (
     <JsonContext>
       <Head>
@@ -66,7 +52,6 @@ const App = ({ Component, pageProps }) => {
         />
       </Head>
       <Component {...pageProps} />
-      <Analytics />
     </JsonContext>
   );
 };

@@ -15,7 +15,7 @@ const Base = ({
   children,
 }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
-  const { base_url } = config.site;
+  const base_url = 'https://www.placea.in';
   const router = useRouter();
 
   return (

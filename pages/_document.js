@@ -4,12 +4,11 @@ import { Head, Html, Main, NextScript } from "next/document";
 
 const Document = () => {
   // destructuring items from config object
-  const { favicon } = config.site;
   return (
     <Html lang="en">
       <Head>
         {/* favicon */}
-        <link rel="shortcut icon" href={favicon} />
+        <link rel="shortcut icon" href= "https://www.placea.in/_next/image?url=%2Fimages%2Ffavicon.png&w=828&q=75"/>
         {/* theme meta */}
         <meta name="theme-name" content="PLACEA" />
         <meta name="msapplication-TileColor" content="#000000" />
