@@ -5,6 +5,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import "styles/style.scss";
+import reactGA from "react-ga4";
 
 const App = ({ Component, pageProps }) => {
   // import google font css
@@ -30,19 +31,9 @@ const App = ({ Component, pageProps }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    // Google Analytics (gtag.js) setup
-    const measurementId = 'G-RWW57SD920'; // Replace with your Measurement ID
-
-    if (measurementId) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', measurementId);
-    }
-  }, []);
+  const TRAKING_ID ="G-RWW57SD920";
+  ReactGA.initialize(TRAKING_ID);
+  ReactGA.pageview(document.location.pathname);
 
   return (
     <JsonContext>
