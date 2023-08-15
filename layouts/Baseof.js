@@ -85,7 +85,7 @@ const Base = ({
         {/* twitter-image */}
         <meta
           name="twitter:image"
-          content={`${base_url}/_next/image?url=${image ? image : meta_image}`}
+          content={`${base_url}/_next/image?url=${image ? image : meta_image}&w=2048&q=75`}
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
