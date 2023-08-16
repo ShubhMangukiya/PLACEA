@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "PLACEA",
-    "base_url": "/",
+    "base_url": "https://www.placea.in",
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "200",
@@ -23,7 +23,7 @@
 
   "metadata": {
     "meta_author": "PLACEA",
-    "meta_image": "/images/favicon.png",
+    "meta_image": "/images/home.png",
     "meta_description": "Easy Travel Planning with Placea Explore - Where You Meets Adventure"
   }
 }
