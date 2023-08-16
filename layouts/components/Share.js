@@ -8,7 +8,7 @@ import {
 
 const Share = ({ title, description, slug, className }) => {
   // destructuring items from config object
-  const { base_url } = config.site;
+  const { base_url } = 'https://www.placea.in'
 
   return (
     <ul className={`${className}`}>
