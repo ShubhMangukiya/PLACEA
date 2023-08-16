@@ -90,6 +90,7 @@ const Base = ({
         <meta name="twitter:card" content={`${base_url}/_next/image?url=${image ? image : meta_image}&w=2048&q=75`} />
 
         <meta property="fb:pages" content="103958732125062"></meta>
+        <meta name="facebook-domain-verification" content="va90yeoyhr6g6j75dreuqgyo17hmp7" />
       </Head>
       <Header />
       {/* main site */}
