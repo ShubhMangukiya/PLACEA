@@ -1,4 +1,10 @@
 import config from "@config/config.json";
+import { plainify } from "@lib/utils/textConverter";
+import Footer from "@partials/Footer";
+import Header from "@partials/Header";
+import Head from "next/head";
+import { useRouter } from "next/router";
+
 import {
   IoLogoFacebook,
   IoLogoLinkedin,
@@ -9,6 +15,7 @@ import {
 const Share = ({ title, description, slug, className }) => {
   // destructuring items from config object
   const { base_url } = 'https://www.placea.in'
+  const router = useRouter();
 
   return (
     <ul className={`${className}`}>
