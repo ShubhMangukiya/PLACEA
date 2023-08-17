@@ -1,7 +1,6 @@
 import BlogPagination, { getStaticProps } from "./page/[slug]";
 export { getStaticProps };
 import Script from 'next/script'
-import Script from 'next/script'
 
 function Home() {
   return (
