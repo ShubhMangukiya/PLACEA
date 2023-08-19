@@ -1,14 +1,13 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
 import moment from 'moment';
-import xmljs from 'xml-js';
+import xmljs from 'xml-js'; // Import the module as 'xmljs' instead of 'convert'
 
 const jsonFilePath = '../json/posts.json';
 const hostBlogBaseURL = 'https://placea.in';
 const feedTitle = 'Your Blog Title';
 const feedDescription = 'Your blog description here';
-const feedLink = 'https://placea.in/rss';
-const selfLink = 'https://placea.in/rss';
+const feedLink = 'https://placea.in/rss'; // Change this to your actual feed URL
 const options = { compact: true, spaces: 4 };
 
 const fetchBlogsList = async () => {
@@ -19,17 +18,16 @@ const fetchBlogsList = async () => {
         if (blogPosts) {
             const feedItems = [];
 
-            blogPosts.forEach((post, index) => {
+            blogPosts.forEach(post => {
                 const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
                 const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
-                const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
+                const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ'); // Adjust date format
 
                 feedItems.push({
                     title: post.frontmatter.title,
                     link: postUrl,
-                    description: post.content,
+                    description: post.content, // You might want to adjust this based on your data
                     pubDate: pubDate,
-                    guid: `unique-guid-${index}`, // Generate a unique identifier for each item
                 });
             });
 
@@ -44,30 +42,22 @@ const createRSSFeed = (items) => {
     const feedData = {
         _declaration: { _attributes: { version: '1.0', encoding: 'utf-8' } },
         rss: {
-            _attributes: { version: '2.0', xmlns: 'http://www.w3.org/2005/Atom' },
+            _attributes: { version: '2.0' },
             channel: {
                 title: { _text: feedTitle },
                 link: { _text: feedLink },
                 description: { _text: feedDescription },
-                'atom:link': {
-                    _attributes: {
-                        href: selfLink,
-                        rel: 'self',
-                        type: 'application/rss+xml',
-                    },
-                },
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
-                    guid: { _text: item.guid }, // Add the unique GUID
                 })),
             },
         },
     };
 
-    const feedXML = xmljs.json2xml(feedData, options);
+    const feedXML = xmljs.json2xml(feedData, options); // Use 'xmljs.json2xml' instead of 'convert.json2xml'
     saveRSSFeed(feedXML);
 }
 
