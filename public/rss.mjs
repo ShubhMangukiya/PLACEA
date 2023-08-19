@@ -74,7 +74,7 @@ const createRSSFeed = (items) => {
                     guid: { _text: item.link },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
-                    'source:outline': {_attributes:  item.image},
+                    'source:outline': item.image,
                 })),
             },
         },
