@@ -23,20 +23,15 @@ if (blogPosts) {
         const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
         const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
         const encodedImageUrl = encodeURIComponent(post.frontmatter.image);        
-        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}`;
-
-        const imageWidth = 1080; // Replace with actual image width
-        const imageHeight = 75; // Replace with actual image height
+        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}&amp;w=1920&amp;q=75`;
         const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
 
-        // Example enclosure URL (replace with your actual media file URL)
-        const enclosureUrl = `${imageUrl}&w=${imageWidth}&q=${imageHeight}`;
 
         feedItems.push({
             title: post.frontmatter.title,
             link: postUrl,
             guid: postUrl,
-            description: post.content,
+            description: post.frontmatter.description,
             pubDate: pubDate,  
             imageUrl: imageUrl,         
         });
