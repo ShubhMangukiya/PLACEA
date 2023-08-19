@@ -18,6 +18,12 @@
         </image:image>
     </url>
     <url>
+        <loc>https://www.placea.in/sample</loc>
+        <image:image>
+            <image:loc>https://www.placea.in/_next/image?url=%2Fimages%2Fposts%2Fgoa.jpg&amp;w=1080&amp;q=75</image:loc>
+        </image:image>
+    </url>
+    <url>
         <loc>https://www.placea.in/tourist-attraction-place-in-india-ladakh</loc>
         <image:image>
             <image:loc>https://www.placea.in/_next/image?url=%2Fimages%2Fposts%2Fladakh.jpg&amp;w=1080&amp;q=75</image:loc>

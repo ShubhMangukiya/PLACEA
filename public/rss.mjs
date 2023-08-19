@@ -37,7 +37,8 @@ if (blogPosts) {
             link: postUrl,
             guid: postUrl,
             description: post.content,
-            pubDate: pubDate,           
+            pubDate: pubDate,  
+            imageUrl: imageUrl,         
         });
     });
 
@@ -67,6 +68,13 @@ const createRSSFeed = (items) => {
                     guid: { _text: item.link },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
+                    enclosure: {  // Add enclosure information for the image
+                        _attributes: {
+                            url: item.imageUrl,
+                            type: 'image/jpg',  // Modify the type according to the image format
+                            length: item.imageLength,  // Replace with the actual image length
+                        },
+                    }
                 })),
                 
                 
