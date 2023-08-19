@@ -1,5 +1,4 @@
 import fs from 'fs';
-import fetch from 'node-fetch';
 import moment from 'moment';
 import xmljs from 'xml-js';
 
@@ -8,6 +7,7 @@ const hostBlogBaseURL = 'https://placea.in';
 const feedTitle = 'PLACEA';
 const feedDescription = 'Easy Travel Planning with Placea Explore - Where You Meets Adventure';
 const feedLink = 'https://www.placea.in/rss.xml';
+const feedLanguage = 'en-us'; // Add a language tag
 const options = { compact: true, spaces: 4 };
 
 const fetchBlogsList = async () => {
@@ -43,12 +43,13 @@ const createRSSFeed = (items) => {
     const feedData = {
         _declaration: { _attributes: { version: '1.0', encoding: 'utf-8' } },
         rss: {
-            _attributes: { version: '2.0', 'xmlns:atom': 'http://www.w3.org/2005/Atom' }, // Define the atom namespace here
+            _attributes: { version: '2.0', 'xmlns:atom': 'http://www.w3.org/2005/Atom' },
             channel: {
                 title: { _text: feedTitle },
                 link: { _text: feedLink },
                 description: { _text: feedDescription },
-                'atom:link': { _attributes: { href: feedLink, rel: 'self', type: 'application/rss+xml' } }, // Use 'atom:link' with attributes
+                'atom:link': { _attributes: { href: feedLink, rel: 'self', type: 'application/rss+xml' } },
+                language: { _text: feedLanguage }, // Add language tag
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
@@ -59,7 +60,6 @@ const createRSSFeed = (items) => {
             },
         },
     };
-    
 
     const feedXML = xmljs.json2xml(feedData, options);
     saveRSSFeed(feedXML);
@@ -68,10 +68,10 @@ const createRSSFeed = (items) => {
 const saveRSSFeed = (xmltext) => {
     fs.writeFile('rss.xml', xmltext, (err) => {
         if (err) {
-            return console.log(err);
+            console.error(err);
+        } else {
+            console.log("RSS feed generated!");
         }
-
-        console.log("RSS feed generated!");
     });
 }
 

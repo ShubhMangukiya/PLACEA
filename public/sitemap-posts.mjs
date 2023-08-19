@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 import moment from 'moment';
 
 const jsonFilePath = '../json/posts.json';
-const hostBlogBaseURL = 'https://placea.in';
+const hostBlogBaseURL = 'https://www.placea.in';
 const untrackedUrlsList = [];
 const options = { compact: true, spaces: 4 };
 
@@ -52,7 +52,7 @@ const filterUniqueURLs = () => {
                             _text: 0.8
                         },
                         lastmod: {
-                            _text: moment().format('YYYY-MM-DDTHH:mm:ssZ')
+                            _text: moment().format('ddd, DD MMM YYYY HH:mm:ss ZZ')
                         }
                     });
                 }

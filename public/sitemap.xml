@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://placea.in/</loc>
+        <loc>https://www.placea.in/</loc>
     </url>
     <url>
-        <loc>https://placea.in/sitemap-posts.xml</loc>
+        <loc>https://www.placea.in/sitemap-posts.xml</loc>
     </url>
     <url>
-        <loc>https://placea.in/sitemap-images.xml</loc>
+        <loc>https://www.placea.in/sitemap-images.xml</loc>
     </url>
 </urlset>
