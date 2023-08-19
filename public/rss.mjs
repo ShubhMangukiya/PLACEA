@@ -60,7 +60,7 @@ const createRSSFeed = (items) => {
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
-                    guid: { _text: item.guid },
+                    guid: { _text: feedLink },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
                     enclosure: {  // Add enclosure information for the image
