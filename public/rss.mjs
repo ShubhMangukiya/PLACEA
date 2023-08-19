@@ -22,15 +22,13 @@ if (blogPosts) {
     blogPosts.forEach(post => {
         const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
         const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
-        const encodedImageUrl = encodeURIComponent(post.frontmatter.image);        
-        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}`;
-
+        const encodedImageUrl = encodeURIComponent(post.frontmatter.image);      
         const imageWidth = 1080; // Replace with actual image width
-        const imageHeight = 75; // Replace with actual image height
-        const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
+        const imageHeight = 75; // Replace with actual image height  
+        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}&w=${imageWidth}&q=${imageHeight}`;
 
-        // Example enclosure URL (replace with your actual media file URL)
-        const enclosureUrl = `${imageUrl}&w=${imageWidth}&q=${imageHeight}`;
+
+        const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
 
         feedItems.push({
             title: post.frontmatter.title,
