@@ -39,12 +39,12 @@ if (blogPosts) {
             description: post.content,
             pubDate: pubDate,
             image: {
-                text : post.frontmatter.title ,
-                created : pubDate,
-                type : 'outline',
-                metaImage : enclosureUrl ,
-                link : postUrl ,
-            },
+                text: post.frontmatter.title,
+                created: pubDate,
+                type: 'outline',
+                metaImage: enclosureUrl,
+                link: postUrl,
+            },            
         });
     });
 
@@ -74,8 +74,10 @@ const createRSSFeed = (items) => {
                     guid: { _text: item.link },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
-                    'source:outline': item.image,
+                    image: item.image, // This assumes the structure of item.image is correct
                 })),
+                
+                
             },
         },
     };
