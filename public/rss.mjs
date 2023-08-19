@@ -58,23 +58,26 @@ const createRSSFeed = (items) => {
             channel: {
                 title: { _text: feedTitle },
                 link: { _text: feedLink },
+                guid: { _text: feedLink },
                 description: { _text: feedDescription },
                 'atom:link': { _attributes: { href: feedLink, rel: 'self', type: 'application/rss+xml' } },
-                language: { _text: feedLanguage },
+                language: { _text: feedLanguage }, // Add language tag
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
+                    guid: { _text: item.guid },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
-                    enclosure: item.imageUrls.map(image => ({
+                    enclosure: {  // Add enclosure information for the image
                         _attributes: {
-                            url: image.url,
-                            type: image.type,
-                            length: image.length,
+                            url: item.imageUrl,
+                            type: 'image/jpg',  // Modify the type according to the image format
+                            length: 12345,  // Replace with the actual image length
                         },
-                    })),
-                    guid: { _text: item.guid }, // Add unique identifier for the item
+                    }
                 })),
+                
+                
             },
         },
     };
