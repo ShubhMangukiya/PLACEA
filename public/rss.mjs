@@ -15,25 +15,37 @@ const fetchBlogsList = async () => {
         const jsonData = await fs.promises.readFile(jsonFilePath, 'utf8');
         const blogPosts = JSON.parse(jsonData);
 
-        if (blogPosts) {
-            const feedItems = [];
+        // Inside the fetchBlogsList function
+if (blogPosts) {
+    const feedItems = [];
 
-            blogPosts.forEach(post => {
-                const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
-                const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
-                const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
+    blogPosts.forEach(post => {
+        const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
+        const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
+        const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
 
-                feedItems.push({
-                    title: post.frontmatter.title,
-                    link: postUrl,
-                    guid: postUrl,
-                    description: post.content,
-                    pubDate: pubDate,
-                });
-            });
+        // Example enclosure URL (replace with your actual media file URL)
+        const enclosureUrl = `${hostBlogBaseURL}/${modifiedTitle}/audio.mp3`;
 
-            createRSSFeed(feedItems);
-        }
+        feedItems.push({
+            title: post.frontmatter.title,
+            link: postUrl,
+            guid: postUrl,
+            description: post.content,
+            pubDate: pubDate,
+            enclosure: {
+                _attributes: {
+                    url: enclosureUrl,
+                    length: '123456', // Length of the media file in bytes
+                    type: 'audio/mpeg', // MIME type of the media file
+                },
+            },
+        });
+    });
+
+    createRSSFeed(feedItems);
+}
+
     } catch (error) {
         console.error('Error reading or parsing JSON:', error);
     }
