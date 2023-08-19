@@ -39,8 +39,10 @@ if (blogPosts) {
             description: post.content,
             pubDate: pubDate,
             image: {
+                text : post.frontmatter.title ,
+                created : pubDate,
+                type : 'outline',
                 metaImage : enclosureUrl ,
-                title : post.frontmatter.title ,
                 link : postUrl ,
             },
         });
@@ -72,7 +74,7 @@ const createRSSFeed = (items) => {
                     guid: { _text: item.link },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
-                    'source:outline': item.image,
+                    'source:outline': {_attributes:  item.image},
                 })),
             },
         },
