@@ -1,13 +1,13 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
 import moment from 'moment';
-import xmljs from 'xml-js'; // Import the module as 'xmljs' instead of 'convert'
+import xmljs from 'xml-js';
 
 const jsonFilePath = '../json/posts.json';
 const hostBlogBaseURL = 'https://placea.in';
-const feedTitle = 'Your Blog Title';
-const feedDescription = 'Your blog description here';
-const feedLink = 'https://placea.in/rss'; // Change this to your actual feed URL
+const feedTitle = 'PLACEA';
+const feedDescription = 'Easy Travel Planning with Placea Explore - Where You Meets Adventure';
+const feedLink = 'https://placea.in/rss.xml';
 const options = { compact: true, spaces: 4 };
 
 const fetchBlogsList = async () => {
@@ -21,13 +21,13 @@ const fetchBlogsList = async () => {
             blogPosts.forEach(post => {
                 const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
                 const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
-                const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ'); // Adjust date format
+                const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
 
                 feedItems.push({
                     title: post.frontmatter.title,
                     link: postUrl,
                     guid: postUrl,
-                    description: post.content, // You might want to adjust this based on your data
+                    description: post.content,
                     pubDate: pubDate,
                 });
             });
@@ -43,11 +43,12 @@ const createRSSFeed = (items) => {
     const feedData = {
         _declaration: { _attributes: { version: '1.0', encoding: 'utf-8' } },
         rss: {
-            _attributes: { version: '2.0' },
+            _attributes: { version: '2.0', 'xmlns:atom': 'http://www.w3.org/2005/Atom' }, // Define the atom namespace here
             channel: {
                 title: { _text: feedTitle },
                 link: { _text: feedLink },
                 description: { _text: feedDescription },
+                'atom:link': { _attributes: { href: feedLink, rel: 'self', type: 'application/rss+xml' } }, // Use 'atom:link' with attributes
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
@@ -58,13 +59,14 @@ const createRSSFeed = (items) => {
             },
         },
     };
+    
 
-    const feedXML = xmljs.json2xml(feedData, options); // Use 'xmljs.json2xml' instead of 'convert.json2xml'
+    const feedXML = xmljs.json2xml(feedData, options);
     saveRSSFeed(feedXML);
 }
 
 const saveRSSFeed = (xmltext) => {
-    fs.writeFile('rss-feed.xml', xmltext, (err) => {
+    fs.writeFile('rss.xml', xmltext, (err) => {
         if (err) {
             return console.log(err);
         }
