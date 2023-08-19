@@ -38,7 +38,11 @@ if (blogPosts) {
             guid: postUrl,
             description: post.content,
             pubDate: pubDate,
-            enclosure: enclosureUrl,
+            image: {
+                url : enclosureUrl ,
+                title : post.frontmatter.title ,
+                link : postUrl ,
+            },
         });
     });
 
@@ -64,10 +68,9 @@ const createRSSFeed = (items) => {
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
-                    guid: { _text: item.link },
-                    enclosure: { _text: item.enclosure},
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
+                    image: item.image,
                 })),
             },
         },
