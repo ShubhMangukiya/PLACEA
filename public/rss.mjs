@@ -26,6 +26,7 @@ const fetchBlogsList = async () => {
                 feedItems.push({
                     title: post.frontmatter.title,
                     link: postUrl,
+                    guid: postUrl,
                     description: post.content, // You might want to adjust this based on your data
                     pubDate: pubDate,
                 });
@@ -50,6 +51,7 @@ const createRSSFeed = (items) => {
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
+                    guid: { _text: item.link },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
                 })),
