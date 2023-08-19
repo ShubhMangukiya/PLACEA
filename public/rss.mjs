@@ -22,10 +22,15 @@ if (blogPosts) {
     blogPosts.forEach(post => {
         const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
         const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
+        const encodedImageUrl = encodeURIComponent(post.frontmatter.image);        
+        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}`;
+
+        const imageWidth = 1080; // Replace with actual image width
+        const imageHeight = 75; // Replace with actual image height
         const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
 
         // Example enclosure URL (replace with your actual media file URL)
-        const enclosureUrl = `${hostBlogBaseURL}/${modifiedTitle}/audio.mp3`;
+        const enclosureUrl = `${imageUrl}&w=${imageWidth}&q=${imageHeight}`;
 
         feedItems.push({
             title: post.frontmatter.title,
@@ -33,13 +38,7 @@ if (blogPosts) {
             guid: postUrl,
             description: post.content,
             pubDate: pubDate,
-            enclosure: {
-                _attributes: {
-                    url: enclosureUrl,
-                    length: '123456', // Length of the media file in bytes
-                    type: 'audio/mpeg', // MIME type of the media file
-                },
-            },
+            enclosure: enclosureUrl,
         });
     });
 
@@ -66,6 +65,7 @@ const createRSSFeed = (items) => {
                     title: { _text: item.title },
                     link: { _text: item.link },
                     guid: { _text: item.link },
+                    enclosure: { _text: item.enclosure},
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
                 })),
