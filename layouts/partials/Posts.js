@@ -8,6 +8,7 @@ const Posts = ({ posts, authors, className }) => {
   const { summary_length } = config.settings;
   return (
     <div className={`row space-y-16 ${className}`}>
+      
       {posts.map((post, i) => (
         <div
           key={`key-${i}`}
