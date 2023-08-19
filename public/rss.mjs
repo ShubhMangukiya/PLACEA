@@ -16,35 +16,32 @@ const fetchBlogsList = async () => {
         const blogPosts = JSON.parse(jsonData);
 
         // Inside the fetchBlogsList function
-if (blogPosts) {
-    const feedItems = [];
+        if (blogPosts) {
+            const feedItems = [];
 
-    blogPosts.forEach(post => {
-        const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
-        const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
-        const encodedImageUrl = encodeURIComponent(post.frontmatter.image);        
-        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}&amp;w=1920&amp;q=75`;
-        const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
+            blogPosts.forEach(post => {
+                const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
+                const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
+                const encodedImageUrl = encodeURIComponent(post.frontmatter.image);
+                const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}&amp;w=1920&amp;q=75`;
+                const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
 
+                feedItems.push({
+                    title: post.frontmatter.title,
+                    link: postUrl,
+                    guid: postUrl,
+                    description: post.frontmatter.description,
+                    pubDate: pubDate,
+                    imageUrl: imageUrl,
+                });
+            });
 
-        feedItems.push({
-            title: post.frontmatter.title,
-            link: postUrl,
-            guid: postUrl,
-            description: post.frontmatter.description,
-            pubDate: pubDate,  
-            imageUrl: imageUrl,         
-        });
-    });
-
-    createRSSFeed(feedItems);
-}
-
+            createRSSFeed(feedItems);
+        }
     } catch (error) {
         console.error('Error reading or parsing JSON:', error);
     }
-}
-
+};
 const createRSSFeed = (items) => {
     const feedData = {
         _declaration: { _attributes: { version: '1.0', encoding: 'utf-8' } },
