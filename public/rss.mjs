@@ -22,11 +22,15 @@ if (blogPosts) {
     blogPosts.forEach(post => {
         const modifiedTitle = post.frontmatter.title.replace(/- /g, '').replace(/ /g, '-').toLowerCase();
         const postUrl = `${hostBlogBaseURL}/${modifiedTitle}`;
-        const encodedImageUrl = encodeURIComponent(post.frontmatter.image);      
+        const encodedImageUrl = encodeURIComponent(post.frontmatter.image);        
+        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}`;
+
         const imageWidth = 1080; // Replace with actual image width
-        const imageHeight = 75; // Replace with actual image height  
-        const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}&w=${imageWidth}&q=${imageHeight}`;
+        const imageHeight = 75; // Replace with actual image height
         const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
+
+        // Example enclosure URL (replace with your actual media file URL)
+        const enclosureUrl = `${imageUrl}&w=${imageWidth}&q=${imageHeight}`;
 
         feedItems.push({
             title: post.frontmatter.title,
@@ -54,12 +58,14 @@ const createRSSFeed = (items) => {
             channel: {
                 title: { _text: feedTitle },
                 link: { _text: feedLink },
+                guid: { _text: feedLink },
                 description: { _text: feedDescription },
                 'atom:link': { _attributes: { href: feedLink, rel: 'self', type: 'application/rss+xml' } },
                 language: { _text: feedLanguage }, // Add language tag
                 item: items.map(item => ({
                     title: { _text: item.title },
                     link: { _text: item.link },
+                    guid: { _text: item.guid },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
                     enclosure: {  // Add enclosure information for the image
@@ -68,9 +74,10 @@ const createRSSFeed = (items) => {
                             type: 'image/jpg',  // Modify the type according to the image format
                             length: 12345,  // Replace with the actual image length
                         },
-                    },
-                    guid: { _text: item.guid }, // Add guid element for the item
+                    }
                 })),
+                
+                
             },
         },
     };
