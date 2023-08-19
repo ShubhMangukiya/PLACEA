@@ -7,7 +7,7 @@ const jsonFilePath = '../json/posts.json';
 const hostBlogBaseURL = 'https://placea.in';
 const feedTitle = 'PLACEA';
 const feedDescription = 'Easy Travel Planning with Placea Explore - Where You Meets Adventure';
-const feedLink = 'https://placea.in/rss.xml';
+const feedLink = 'https://www.placea.in/rss.xml';
 const options = { compact: true, spaces: 4 };
 
 const fetchBlogsList = async () => {
