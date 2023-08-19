@@ -26,8 +26,6 @@ if (blogPosts) {
         const imageWidth = 1080; // Replace with actual image width
         const imageHeight = 75; // Replace with actual image height  
         const imageUrl = `${hostBlogBaseURL}/_next/image?url=${encodedImageUrl}&w=${imageWidth}&q=${imageHeight}`;
-
-
         const pubDate = moment(post.date).format('ddd, DD MMM YYYY HH:mm:ss ZZ');
 
         feedItems.push({
