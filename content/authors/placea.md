@@ -4,7 +4,6 @@ image: /images/authors/author.png
 description: Explore captivating destinations, travel tips, and cultural experiences on our vibrant travel blog.
 social:
   facebook: https://www.facebook.com/placea.in
-  twitter: https://www.twitter.com/
   instagram: https://www.instagram.com/placea.in
   youtube: https://www.youtube.com/@placea01
 ---
