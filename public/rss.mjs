@@ -37,14 +37,7 @@ if (blogPosts) {
             link: postUrl,
             guid: postUrl,
             description: post.content,
-            pubDate: pubDate,
-            image: {
-                text: post.frontmatter.title,
-                created: pubDate,
-                type: 'outline',
-                metaImage: enclosureUrl,
-                link: postUrl,
-            },            
+            pubDate: pubDate,           
         });
     });
 
@@ -64,7 +57,7 @@ const createRSSFeed = (items) => {
             channel: {
                 title: { _text: feedTitle },
                 link: { _text: feedLink },
-                guid: {  _text: feedLink },
+                guid: { _text: feedLink },
                 description: { _text: feedDescription },
                 'atom:link': { _attributes: { href: feedLink, rel: 'self', type: 'application/rss+xml' } },
                 language: { _text: feedLanguage }, // Add language tag
@@ -74,7 +67,6 @@ const createRSSFeed = (items) => {
                     guid: { _text: item.link },
                     description: { _text: item.description },
                     pubDate: { _text: item.pubDate },
-                    image: item.image, // This assumes the structure of item.image is correct
                 })),
                 
                 
