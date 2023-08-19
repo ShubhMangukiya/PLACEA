@@ -72,7 +72,7 @@ const createRSSFeed = (items) => {
                         _attributes: {
                             url: item.imageUrl,
                             type: 'image/jpg',  // Modify the type according to the image format
-                            length: item.imageLength,  // Replace with the actual image length
+                            length: 12345,  // Replace with the actual image length
                         },
                     }
                 })),
