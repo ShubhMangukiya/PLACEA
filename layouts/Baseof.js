@@ -10,8 +10,6 @@ const Base = ({
   meta_title,
   description,
   image,
-  noindex,
-  canonical,
   children,
 }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
@@ -27,12 +25,6 @@ const Base = ({
             meta_title ? meta_title : title ? title : config.site.title
           )}
         </title>
-
-        {/* canonical url */}
-        {canonical && <link rel="canonical" href={canonical} itemProp="url" />}
-
-        {/* noindex robots */}
-        {noindex && <meta name="robots" content="noindex,nofollow" />}
 
         {/* meta-description */}
         <meta
