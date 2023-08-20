@@ -6,7 +6,7 @@ image: "/images/posts/goa.jpg"
 categories: ["Explore City", "Heritage & Culture", "Country Exploration", "Adventure", "Beach", "Seasonal Travel" ]
 authors: ["PLACEA"]
 tags: ["travel", "beach"]
-draft: false
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac fermentum ex. Donec ut augue fringilla, rhoncus mi et, interdum lorem. Vivamus viverra in ligula ut sodales. Nulla sit amet arcu eu enim egestas porttitor gravida sit amet ante. Phasellus velit quam, vehicula ut vestibulum quis, vulputate et justo. Ut nec tristique odio. Aliquam gravida, metus eu porta varius, metus massa luctus risus, at porttitor arcu eros id nulla. Etiam quis tortor erat. Vestibulum semper iaculis dapibus. Curabitur finibus eleifend ligula, quis cursus felis iaculis id. Donec consectetur enim ante, sit amet ultricies risus vulputate non. Donec commodo nisl non dui fermentum, ut porta enim vehicula.
