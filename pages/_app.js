@@ -43,6 +43,7 @@ const App = ({ Component, pageProps }) => {
     <JsonContext>
       <Head>
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"></meta>
         {/* google font css */}
         <link
           rel="preconnect"
