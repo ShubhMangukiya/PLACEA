@@ -1,6 +1,6 @@
 ---
 title: "Heaven Of India - Kashmir"
-description: "meta description"
+description: "Nestled along the pristine Arabian Sea on the western coast of India, Goa stands as a testament to the perfect blend of natural beauty."
 date: 2023-04-04
 image: "/images/posts/kashmir.jpg"
 categories: ["Explore City", "Adventure"]
