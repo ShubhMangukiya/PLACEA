@@ -52,7 +52,7 @@ const filterUniqueURLs = () => {
                             _text: 0.8
                         },
                         lastmod: {
-                            _text: moment().format('ddd, DD MMM YYYY HH:mm:ss ZZ')
+                            _text: moment().format('YYYY-MM-DDThh:mmTZD')
                         }
                     });
                 }
