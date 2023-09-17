@@ -4,6 +4,7 @@ import { getSinglePage } from "@lib/contentParser";
 import { slugify } from "@lib/utils/textConverter";
 import { useSearchContext } from "context/state";
 import { useRouter } from "next/router";
+import Layout from '@layouts/components/Layout';
 
 const SearchPage = ({ authors }) => {
   const router = useRouter();
@@ -33,6 +34,7 @@ const SearchPage = ({ authors }) => {
   });
 
   return (
+    <Layout>
     <Base title={`Search results for ${query.key}`}>
       <div className="section">
         <div className="container">
@@ -49,6 +51,7 @@ const SearchPage = ({ authors }) => {
         </div>
       </div>
     </Base>
+    </Layout>
   );
 };
 

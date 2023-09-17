@@ -1,12 +1,14 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import { getTaxonomy } from "@lib/taxonomyParser";
+import Layout from '@layouts/components/Layout';
 import { humanize, markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 const { blog_folder } = config.settings;
 
 const Categories = ({ categories }) => {
   return (
+    <Layout>
     <Base title={"categories"}>
       <section className="section">
         <div className="container text-center">
@@ -26,6 +28,7 @@ const Categories = ({ categories }) => {
         </div>
       </section>
     </Base>
+    </Layout>
   );
 };
 

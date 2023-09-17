@@ -1,17 +1,20 @@
 import AuthorSingle from "@layouts/AuthorSingle";
 import { getSinglePage } from "@lib/contentParser";
 import parseMDX from "@lib/utils/mdxParser";
+import Layout from '@layouts/components/Layout';
 
 // post single layout
 const Article = ({ author, mdxContent }) => {
   const { frontmatter, content } = author[0];
 
   return (
+    <Layout>
     <AuthorSingle
       frontmatter={frontmatter}
       content={content}
       mdxContent={mdxContent}
     />
+    </Layout>
   );
 };
 

@@ -3,6 +3,7 @@ import theme from "@config/theme.json";
 import { Analytics } from '@vercel/analytics/react';
 import { JsonContext } from "context/state";
 import Head from "next/head";
+import Layout from '@layouts/components/Layout';
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import "styles/style.scss";
@@ -31,6 +32,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
+    <Layout>
     <JsonContext>
       <Head>
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
@@ -55,6 +57,7 @@ const App = ({ Component, pageProps }) => {
       
       <Component {...pageProps} />
     </JsonContext>
+    </Layout>
   );
 };
 

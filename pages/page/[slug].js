@@ -2,7 +2,7 @@ import Pagination from "@components/Pagination";
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import { getSinglePage } from "@lib/contentParser";
-import Layout from '/components/Layout';
+import Layout from '@layouts/components/Layout';
 import Posts from "@partials/Posts";
 const { blog_folder } = config.settings;
 

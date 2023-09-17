@@ -4,11 +4,13 @@ import { getSinglePage } from "@lib/contentParser";
 import { getTaxonomy } from "@lib/taxonomyParser";
 import { slugify } from "@lib/utils/textConverter";
 import Posts from "@partials/Posts";
+import Layout from '@layouts/components/Layout';
 const { blog_folder } = config.settings;
 
 // tag page
 const Tag = ({ tag, posts, authors }) => {
   return (
+    <Layout>
     <Base title={tag}>
       <div className="section">
         <div className="container">
@@ -19,6 +21,7 @@ const Tag = ({ tag, posts, authors }) => {
         </div>
       </div>
     </Base>
+    </Layout> 
   );
 };
 

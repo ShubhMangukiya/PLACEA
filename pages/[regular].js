@@ -6,6 +6,7 @@ import Contact from "@layouts/Contact";
 import Default from "@layouts/Default";
 import PostSingle from "@layouts/PostSingle";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
+import Layout from '@layouts/components/Layout';
 const { blog_folder } = config.settings;
 
 // for all regular pages
@@ -15,6 +16,7 @@ const RegularPages = ({ slug, data, postSlug, authors, posts }) => {
   const { content } = data;
 
   return (
+    <Layout>
     <Base
       title={title}
       description={description ? description : content.slice(0, 120)}
@@ -35,6 +37,7 @@ const RegularPages = ({ slug, data, postSlug, authors, posts }) => {
         <Default data={data} />
       )}
     </Base>
+    </Layout>
   );
 };
 export default RegularPages;

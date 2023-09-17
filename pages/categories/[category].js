@@ -4,11 +4,13 @@ import { getSinglePage } from "@lib/contentParser";
 import { getTaxonomy } from "@lib/taxonomyParser";
 import { slugify } from "@lib/utils/textConverter";
 import Posts from "@partials/Posts";
+import Layout from '@layouts/components/Layout';
 const { blog_folder } = config.settings;
 
 // category page
 const Category = ({ category, posts, authors }) => {
   return (
+    <Layout>
     <Base title={category}>
       <div className="section">
         <div className="container">
@@ -20,6 +22,7 @@ const Category = ({ category, posts, authors }) => {
         </div>
       </div>
     </Base>
+    </Layout>
   );
 };
 

@@ -2,11 +2,13 @@ import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import { getTaxonomy } from "@lib/taxonomyParser";
 import { humanize, markdownify } from "@lib/utils/textConverter";
+import Layout from '@layouts/components/Layout';
 import Link from "next/link";
 const { blog_folder } = config.settings;
 
 const Tags = ({ tags }) => {
   return (
+    <Layout>
     <Base title={"tags"}>
       <section className="section">
         <div className="container text-center">
@@ -26,6 +28,7 @@ const Tags = ({ tags }) => {
         </div>
       </section>
     </Base>
+    </Layout>
   );
 };
 

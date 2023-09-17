@@ -1,10 +1,12 @@
 import TwSizeIndicator from "@components/TwSizeIndicator";
+import Layout from '@layouts/components/Layout';
 import config from "@config/config.json";
 import { Head, Html, Main, NextScript } from "next/document";
 
 const Document = () => {
   // destructuring items from config object
   return (
+    <Layout>
     <Html lang="en">
       <Head>
         {/* favicon */}
@@ -29,6 +31,7 @@ const Document = () => {
         <NextScript />
       </body>
     </Html>
+    </Layout>
   );
 };
 

@@ -4,6 +4,7 @@ import Base from "@layouts/Baseof";
 import { getListPage, getSinglePage } from "@lib/contentParser";
 import { markdownify } from "@lib/utils/textConverter";
 import Authors from "@partials/Authors";
+import Layout from '@layouts/components/Layout';
 
 // blog pagination
 const AuthorPagination = ({
@@ -20,6 +21,7 @@ const AuthorPagination = ({
   const { title } = frontmatter;
 
   return (
+    <Layout>
     <Base title={title}>
       <section className="section">
         <div className="container text-center">
@@ -33,6 +35,7 @@ const AuthorPagination = ({
         </div>
       </section>
     </Base>
+    </Layout>
   );
 };
 
