@@ -24,15 +24,6 @@ const App = ({ Component, pageProps }) => {
     ).then((res) => res.text().then((css) => setFontcss(css)));
   }, [pf, sf]);
   useEffect(() => {
-    ReactGA.initialize("G-RWW57SD920"); // Replace with your GA4 Measurement ID
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, [useRouter().asPath]);
-
-  // google tag manager (gtm)
-  const tagManagerArgs = {
-    gtmId: config.params.tag_manager_id,
-  };
-  useEffect(() => {
     setTimeout(() => {
       config.params.tag_manager_id && TagManager.initialize(tagManagerArgs);
     }, 5000);
@@ -61,6 +52,7 @@ const App = ({ Component, pageProps }) => {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
       </Head>
+      
       <Component {...pageProps} />
     </JsonContext>
   );
