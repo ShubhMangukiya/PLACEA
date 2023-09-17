@@ -14,6 +14,7 @@ const BlogPagination = ({ posts, authors, currentPage, pagination }) => {
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
+    <Layout>
     <Base>
       <section className="section">
         <div className="container">
@@ -22,6 +23,7 @@ const BlogPagination = ({ posts, authors, currentPage, pagination }) => {
         </div>
       </section>
     </Base>
+    </Layout>
   );
 };
 
